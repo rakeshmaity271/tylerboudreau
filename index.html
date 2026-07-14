@@ -309,16 +309,16 @@ body{
 
 /* ========== MEET YOUR THERAPIST ========== */
 .about__inner{
-  display:grid;grid-template-columns:.9fr 1.1fr;
-  gap:5rem;align-items:start;
+  display:grid;grid-template-columns:.85fr 1fr .85fr;
+  gap:3.5rem;align-items:center;
   position:relative;
 }
-.about__left{
+.about__content{
   display:flex;flex-direction:column;gap:2rem;
 }
 .about__image-wrap{position:relative}
 .about__image-wrap img{
-  width:100%;height:420px;object-fit:cover;
+  width:100%;height:460px;object-fit:cover;
   border-radius:var(--radius);
 }
 .about__botanical{
@@ -721,7 +721,7 @@ body{
 .fw-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
 .fw-card__img{height:100%;min-height:200px;overflow:hidden}
 .fw-card__img img{width:100%;height:100%;object-fit:cover}
-.fw-card__body{padding:1.75rem;display:flex;flex-direction:column}
+.fw-card__body{padding:1.75rem;display:flex;flex-direction:column;text-align:left}
 .fw-card__icon{
   width:28px;height:28px;margin-bottom:.75rem;color:#B8A998;
 }
@@ -742,6 +742,7 @@ body{
 }
 .fw-featured__body{
   padding:2.5rem;display:flex;flex-direction:column;justify-content:center;
+  text-align:left;
 }
 .fw-featured__icon{
   width:32px;height:32px;margin-bottom:1rem;color:#999;
@@ -1002,10 +1003,10 @@ body{
 <section class="section section--ivory" id="about">
   <div class="container">
     <div class="about__inner">
-      <div class="about__left">
-        <div class="about__image-wrap">
-          <img src="images/tyler_portrait.jpg" alt="Tyler Boudreau, LICSW, PhD">
-        </div>
+      <div class="about__image-wrap">
+        <img src="images/tyler_portrait.jpg" alt="Tyler Boudreau, LICSW, PhD">
+      </div>
+      <div class="about__content">
         <div class="about__text-block">
           <p class="label">Meet Your Therapist</p>
           <h2 class="about__heading">Human first.</h2>
@@ -1119,53 +1120,48 @@ body{
 <section class="section section--ivory fundamentals" id="few-words">
   <div class="container">
     <div class="fundamentals__intro">
-      <p class="label">Therapy Fundamentals</p>
+      <p class="label">A Few Words</p>
       <h2 class="fundamentals__heading">Understanding Your <em>Therapy Path</em></h2>
-      <p class="fundamentals__sub">Therapy introduces concepts that help us understand how the mind works and how healing happens &mdash; one step at a time.</p>
+      <p class="fundamentals__sub">A big part of therapy is learning how humans protect themselves neurobiologically. Below are a few concepts and terms you&rsquo;ll likely encounter along the way.</p>
     </div>
     <div class="fundamentals__grid">
       <div class="fw-card">
-        <div class="fw-card__img"><img src="images/body_bg.jpeg" alt="Natural elements representing the nervous system"></div>
+        <div class="fw-card__img"><img src="images/33_cache_959116531.jpg.jpeg" alt="Natural elements representing the nervous system"></div>
         <div class="fw-card__body">
-          <div class="fw-card__icon"><i data-lucide="brain"></i></div>
           <h3 class="fw-card__title">Nervous System</h3>
-          <p class="fw-card__desc">Understanding your body&rsquo;s natural responses to stress, safety, and connection.</p>
+          <p class="fw-card__desc">The Autonomic Nervous System shapes our moment-to-moment feelings of safety and danger, and the physical sensations that bring many people to therapy.</p>
           <a href="#" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
         </div>
       </div>
       <div class="fw-card">
-        <div class="fw-card__img"><img src="images/testimonial.png?v=2" alt="Stacked books and ceramic vessel"></div>
+        <div class="fw-card__img"><img src="images/04_teaserbox_959116532.jpg.jpeg" alt="Abstract forms representing inner parts"></div>
         <div class="fw-card__body">
-          <div class="fw-card__icon"><i data-lucide="heart"></i></div>
-          <h3 class="fw-card__title">Attachment</h3>
-          <p class="fw-card__desc">How early relationships shape the way we connect, trust, and relate to others.</p>
-          <a href="#" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
-        </div>
-      </div>
-      <div class="fw-card">
-        <div class="fw-card__img"><img src="images/spirit_bg.jpg" alt="Branch casting shadow on light surface"></div>
-        <div class="fw-card__body">
-          <div class="fw-card__icon"><i data-lucide="shield-alert"></i></div>
-          <h3 class="fw-card__title">Trauma</h3>
-          <p class="fw-card__desc">How unresolved experiences can stay with us &mdash; and how healing helps the brain feel safe again.</p>
-          <a href="#" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
-        </div>
-      </div>
-      <div class="fw-card">
-        <div class="fw-card__img"><img src="images/mind_bg.jpeg" alt="Green leafy branch"></div>
-        <div class="fw-card__body">
-          <div class="fw-card__icon"><i data-lucide="layers"></i></div>
           <h3 class="fw-card__title">Parts</h3>
-          <p class="fw-card__desc">Understanding the different parts of ourselves and creating inner balance.</p>
+          <p class="fw-card__desc">The natural division of labor within the brain and personality, and the inner dialogues we all experience among those parts.</p>
+          <a href="#" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+        </div>
+      </div>
+      <div class="fw-card">
+        <div class="fw-card__img"><img src="images/06_teaserbox_959116533.jpg.jpeg" alt="Abstract texture representing attachment"></div>
+        <div class="fw-card__body">
+          <h3 class="fw-card__title">Attachment</h3>
+          <p class="fw-card__desc">Early relationship patterns become templates for how we seek safety, avoid danger, and relate to others throughout life.</p>
+          <a href="#" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+        </div>
+      </div>
+      <div class="fw-card">
+        <div class="fw-card__img"><img src="images/02_cache_959116534.jpg.jpeg" alt="Abstract scene representing trauma"></div>
+        <div class="fw-card__body">
+          <h3 class="fw-card__title">Trauma</h3>
+          <p class="fw-card__desc">Unresolved memories stored as if still occurring in the present, keeping the nervous system on alert and responding to triggers.</p>
           <a href="#" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
         </div>
       </div>
     </div>
     <div class="fw-featured">
       <div class="fw-featured__body">
-        <div class="fw-featured__icon"><i data-lucide="sparkles"></i></div>
         <h3 class="fw-featured__title">EMDR &amp; Adaptive Resolution</h3>
-        <p class="fw-featured__desc">Evidence-based approaches that help the mind process experiences and create lasting change at a deeper level.</p>
+        <p class="fw-featured__desc">EMDR activates the mind&rsquo;s natural ability to process experiences and heal itself. Adaptive Resolution allows the mind to sift through what happened, keep what is useful, and let the rest go.</p>
         <a href="#" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
       </div>
       <div class="fw-featured__img">
