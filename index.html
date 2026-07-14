@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tyler Therapy — Psychotherapy & EMDR | Tyler Boudreau, LICSW, PhD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+/* ========== RESET ========== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit;transition:color .3s}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+
+/* ========== VARIABLES ========== */
+:root{
+  --warm-white:#F8F6F2;
+  --ivory:#F5F1EA;
+  --light-sand:#EFE8DE;
+  --stone:#D8D3CB;
+  --sage:#8C9A8B;
+  --taupe:#B8A998;
+  --charcoal:#2C2C2C;
+  --border:#E8E6E2;
+  --footer-dark:#2F3A30;
+  --container:1200px;
+  --radius:8px;
+  --shadow:0 8px 30px rgba(0,0,0,.05);
+  --shadow-hover:0 12px 40px rgba(0,0,0,.08);
+  --ff-heading:'Cormorant Garamond',serif;
+  --ff-heading-alt:'Libre Baskerville',serif;
+  --ff-display:'Playfair Display',serif;
+  --ff-body:'Inter',sans-serif;
+  --ff-body-alt:'Manrope',sans-serif;
+  --ff-body-alt2:'Source Sans 3',sans-serif;
+}
+
+body{
+  font-family:var(--ff-body);
+  color:var(--charcoal);
+  background:var(--warm-white);
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ========== CONTAINER ========== */
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 2.5rem}
+@media(max-width:768px){.container{padding:0 1.25rem}}
+
+/* ========== SECTION SPACING ========== */
+.section{padding:8.5rem 0}
+.section--warm{background:var(--warm-white)}
+.section--ivory{background:var(--ivory)}
+.section--sand{background:var(--light-sand)}
+@media(max-width:768px){.section{padding:5rem 0}}
+
+/* ========== TYPOGRAPHY ========== */
+.label{
+  font-family:var(--ff-body-alt);
+  font-size:.7rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--sage);margin-bottom:1rem;
+}
+.heading-xl{
+  font-family:var(--ff-heading);
+  font-size:clamp(2.5rem,5vw,3.75rem);
+  font-weight:500;color:var(--charcoal);
+  line-height:1.15;margin-bottom:1.25rem;
+}
+.heading-lg{
+  font-family:var(--ff-heading);
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:500;color:var(--charcoal);
+  line-height:1.2;margin-bottom:1rem;
+}
+.heading-md{
+  font-family:var(--ff-heading);
+  font-size:clamp(1.5rem,3vw,2.25rem);
+  font-weight:600;color:var(--charcoal);
+  line-height:1.25;margin-bottom:1rem;
+}
+.text-body{font-family:var(--ff-body);color:#6B6B6B;font-size:.95rem;line-height:1.8}
+.text-body-alt{font-family:var(--ff-body-alt);color:#6B6B6B;font-size:.9rem;line-height:1.75}
+
+/* ========== BUTTONS ========== */
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  height:54px;padding:0 2rem;border-radius:var(--radius);
+  font-family:var(--ff-body-alt);font-size:.85rem;font-weight:500;
+  letter-spacing:.02em;transition:all .3s ease;border:none;
+}
+.btn--sage{background:var(--sage);color:#fff}
+.btn--sage:hover{background:#7A8A79}
+.btn--outline{background:transparent;color:var(--charcoal);border:1px solid var(--border)}
+.btn--outline:hover{border-color:var(--sage);color:var(--sage)}
+.btn--white{background:#fff;color:var(--footer-dark)}
+.btn--white:hover{background:var(--ivory)}
+.btn--link{
+  height:auto;padding:0;background:none;border:none;
+  font-family:var(--ff-body-alt);font-size:.85rem;font-weight:500;
+  color:var(--sage);display:inline-flex;align-items:center;gap:.4rem;
+  transition:gap .3s,color .3s;
+}
+.btn--link:hover{gap:.7rem;color:#7A8A79}
+.btn--link i{width:16px;height:16px}
+
+/* ========== LINK ARROWS ========== */
+.link-arrow{
+  font-family:var(--ff-body-alt);font-size:.85rem;font-weight:500;
+  color:var(--sage);display:inline-flex;align-items:center;gap:.35rem;
+  transition:gap .3s;
+}
+.link-arrow:hover{gap:.6rem}
+
+/* ========== HEADER ========== */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(248,246,242,.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);transition:box-shadow .3s;
+}
+.header.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}
+.header__inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+.header__logo{display:flex;align-items:center;gap:.6rem}
+.header__logo-icon{width:28px;height:28px;color:var(--sage)}
+.header__logo-text{display:flex;flex-direction:column}
+.header__logo-name{
+  font-family:var(--ff-heading);font-size:1.4rem;font-weight:600;
+  color:var(--charcoal);letter-spacing:.01em;line-height:1.1;
+}
+.header__logo-tagline{
+  font-family:var(--ff-body-alt2);font-size:.65rem;
+  color:var(--taupe);letter-spacing:.04em;
+}
+.header__nav{display:flex;align-items:center;gap:2.5rem}
+.header__nav-links{display:flex;gap:2rem}
+.header__nav-links a{
+  font-family:var(--ff-body-alt);font-size:.8rem;font-weight:500;
+  color:#666;letter-spacing:.03em;position:relative;padding-bottom:3px;
+  transition:color .3s;
+}
+.header__nav-links a:hover{color:var(--charcoal)}
+.header__nav-links a.active{color:var(--charcoal)}
+.header__nav-links a.active::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:1.5px;background:var(--sage);border-radius:2px;
+}
+.header__hamburger{
+  display:none;flex-direction:column;gap:5px;padding:4px;
+}
+.header__hamburger span{
+  width:22px;height:1.5px;background:var(--charcoal);border-radius:2px;
+  transition:all .3s;
+}
+
+/* ========== MOBILE NAV ========== */
+.mobile-nav{
+  display:none;position:fixed;top:76px;left:0;right:0;bottom:0;
+  background:var(--warm-white);z-index:999;padding:2rem;
+  flex-direction:column;gap:0;overflow-y:auto;
+}
+.mobile-nav.open{display:flex}
+.mobile-nav a{
+  font-family:var(--ff-body-alt);font-size:1rem;color:#555;
+  padding:1rem 0;border-bottom:1px solid var(--border);
+}
+.mobile-nav a.active{color:var(--charcoal);font-weight:600}
+
+/* ========== HERO ========== */
+.hero{padding-top:76px;position:relative;overflow:hidden}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238C9A8B' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity:.5;z-index:0;
+}
+.hero__inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:5rem;position:relative;z-index:1;
+  padding:5rem 0 5rem;
+}
+.hero__text{max-width:540px}
+.hero__headline{
+  font-family:var(--ff-heading);
+  font-size:clamp(2.75rem,5.5vw,4rem);
+  font-weight:500;line-height:1.12;
+  color:var(--charcoal);margin-bottom:1.5rem;
+}
+.hero__headline em{
+  font-style:italic;color:var(--sage);
+}
+.hero__sub{
+  font-family:var(--ff-body);font-size:1rem;
+  color:#777;line-height:1.85;margin-bottom:2.5rem;
+  max-width:460px;
+}
+.hero__ctas{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.hero__image-wrap{
+  position:relative;overflow:hidden;
+}
+.hero__image-wrap img{
+  width:100%;height:100%;min-height:480px;object-fit:cover;
+}
+.hero__image-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(140,154,139,.08),transparent 60%);
+}
+.hero__divider{
+  width:60px;height:1.5px;background:var(--stone);
+  margin-bottom:1.5rem;border-radius:2px;
+}
+
+/* Botanical decoration */
+.botanical-deco{
+  position:absolute;pointer-events:none;opacity:.06;z-index:0;
+}
+.botanical-deco--hero{
+  top:120px;left:-80px;width:320px;height:320px;
+}
+
+/* ========== OUR PHILOSOPHY ========== */
+.philosophy{text-align:left;position:relative}
+.philosophy__inner{
+  display:grid;grid-template-columns:.85fr 1.15fr;
+  gap:5rem;align-items:start;
+}
+.philosophy__heading{
+  font-family:var(--ff-heading);font-size:clamp(2rem,3.5vw,2.75rem);
+  font-weight:500;color:var(--charcoal);line-height:1.25;
+  margin-bottom:1.25rem;
+}
+.philosophy__heading em{font-style:italic}
+.philosophy__divider{
+  width:50px;height:1.5px;background:var(--sage);
+  border-radius:2px;
+}
+.philosophy__grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;
+}
+.philosophy__item{
+  padding:0 1.75rem;text-align:center;position:relative;
+}
+.philosophy__item:first-child{padding-left:0}
+.philosophy__item:last-child{padding-right:0}
+.philosophy__item:not(:last-child)::after{
+  content:'';position:absolute;right:0;top:10%;height:80%;
+  width:1px;background:var(--border);
+}
+.philosophy__icon{
+  width:40px;height:40px;margin:0 auto 1rem;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--sage);opacity:.7;
+}
+.philosophy__icon i{width:26px;height:26px;stroke-width:1.5}
+.philosophy__title{
+  font-family:var(--ff-heading);font-size:1.1rem;font-weight:600;
+  color:var(--charcoal);margin-bottom:.4rem;font-style:italic;
+}
+.philosophy__desc{
+  font-family:var(--ff-body-alt);font-size:.8rem;
+  color:#999;line-height:1.6;
+}
+@media(max-width:1024px){
+  .philosophy__inner{grid-template-columns:1fr;gap:3rem}
+}
+@media(max-width:768px){
+  .philosophy__grid{grid-template-columns:1fr;gap:2rem}
+  .philosophy__item::after{display:none}
+  .philosophy__item{padding:0 !important;border-bottom:1px solid var(--border);padding-bottom:1.5rem !important}
+  .philosophy__item:last-child{border-bottom:none}
+}
+
+/* ========== SERVICES ========== */
+.services{text-align:left;position:relative}
+.services__header{margin-bottom:3.5rem}
+.services__grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:2rem;
+}
+.service-card{
+  background:var(--warm-white);border-radius:var(--radius);
+  overflow:hidden;display:grid;grid-template-columns:200px 1fr;
+  box-shadow:var(--shadow);border:1px solid var(--border);
+  transition:transform .3s,box-shadow .3s;
+}
+.service-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.service-card__img{height:100%;min-height:180px;overflow:hidden}
+.service-card__img img{width:100%;height:100%;object-fit:cover}
+.service-card__body{
+  padding:1.75rem 1.75rem;display:flex;flex-direction:column;justify-content:center;
+}
+.service-card__title{
+  font-family:var(--ff-heading);font-size:1.25rem;font-weight:600;
+  color:var(--charcoal);margin-bottom:.5rem;
+}
+.service-card__desc{
+  font-family:var(--ff-body-alt);font-size:.82rem;
+  color:#888;line-height:1.7;margin-bottom:1rem;
+}
+.services__cta{
+  margin-top:2.5rem;text-align:center;
+}
+
+/* ========== MEET YOUR THERAPIST ========== */
+.about__inner{
+  display:grid;grid-template-columns:.9fr 1.1fr;
+  gap:5rem;align-items:start;
+  position:relative;
+}
+.about__left{
+  display:flex;flex-direction:column;gap:2rem;
+}
+.about__image-wrap{position:relative}
+.about__image-wrap img{
+  width:100%;height:420px;object-fit:cover;
+  border-radius:var(--radius);
+}
+.about__botanical{
+  position:absolute;top:-60px;right:-80px;
+  width:280px;height:340px;opacity:.07;pointer-events:none;
+  z-index:0;
+}
+.about__text-block{}
+.about__text .label{text-align:left;margin-bottom:.75rem}
+.about__heading{
+  font-family:var(--ff-heading);font-size:clamp(2rem,3.5vw,2.75rem);
+  font-weight:500;color:var(--charcoal);margin-bottom:.25rem;
+  line-height:1.2;
+}
+.about__heading--italic{font-style:italic}
+.about__divider{
+  width:50px;height:1.5px;background:var(--sage);
+  margin:1.25rem 0;border-radius:2px;
+}
+.about__bio{
+  font-family:var(--ff-body);font-size:.9rem;
+  color:#666;line-height:1.85;
+}
+.about__quote{
+  background:var(--light-sand);border-radius:var(--radius);
+  padding:1.5rem 1.75rem;position:relative;
+}
+.about__quote-mark{
+  font-family:var(--ff-heading);font-size:3rem;line-height:1;
+  color:var(--stone);margin-bottom:-.5rem;user-select:none;
+}
+.about__quote-text{
+  font-family:var(--ff-heading);font-size:1rem;
+  font-style:italic;color:var(--charcoal);
+  line-height:1.65;margin-bottom:.5rem;
+}
+.about__quote-author{
+  font-family:var(--ff-body-alt);font-size:.75rem;
+  color:#999;font-style:italic;
+}
+.about__sidebar{}
+.about__cred-list{margin-bottom:2rem}
+.about__cred-item{
+  display:flex;align-items:flex-start;gap:1rem;
+  padding:1rem 0;border-bottom:1px solid var(--border);
+}
+.about__cred-item:last-child{border-bottom:none}
+.about__cred-icon{
+  width:36px;height:36px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  color:#999;
+}
+.about__cred-icon i{width:20px;height:20px;stroke-width:1.5}
+.about__cred-title{
+  font-family:var(--ff-body-alt);font-size:.85rem;font-weight:600;
+  color:var(--charcoal);margin-bottom:.15rem;
+}
+.about__cred-detail{
+  font-family:var(--ff-body-alt);font-size:.78rem;
+  color:#999;
+}
+.about__cta-btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--sage);color:#fff;
+  padding:.85rem 1.75rem;border-radius:var(--radius);
+  font-family:var(--ff-body-alt);font-size:.85rem;font-weight:500;
+  transition:background .3s;
+}
+.about__cta-btn:hover{background:#7A8A79;color:#fff}
+.about__cta-btn i{width:16px;height:16px}
+.about__link{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-family:var(--ff-body-alt);font-size:.85rem;font-weight:500;
+  color:var(--sage);margin-top:2rem;
+  transition:gap .3s;
+}
+.about__link:hover{gap:.7rem}
+.about__link i{width:16px;height:16px}
+@media(max-width:1024px){
+  .about__inner{grid-template-columns:1fr;gap:3rem}
+  .about__image-wrap img{height:360px}
+}
+@media(max-width:768px){
+  .about__image-wrap img{height:300px}
+}
+
+/* ========== APPROACH BANNER ========== */
+.approach-banner{
+  background:var(--sage);padding:6rem 0;position:relative;overflow:hidden;
+}
+.approach-banner::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10c20 15 30 35 30 55s-10 25-30 25-30-5-30-25 10-40 30-55z' fill='none' stroke='%23fff' stroke-width='.5' opacity='.06'/%3E%3C/svg%3E");
+  opacity:.5;
+}
+.approach-banner__inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:center;position:relative;z-index:1;
+}
+.approach-banner__heading{
+  font-family:var(--ff-heading);font-size:clamp(2rem,4vw,3rem);
+  font-weight:500;color:#fff;line-height:1.2;
+}
+.approach-banner__text{
+  font-family:var(--ff-heading);font-size:clamp(.95rem,1.5vw,1.1rem);
+  font-weight:400;color:rgba(255,255,255,.85);
+  line-height:1.8;margin-bottom:2rem;
+}
+.approach-banner__link{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-family:var(--ff-body-alt);font-size:.85rem;font-weight:500;
+  color:#fff;transition:gap .3s;
+}
+.approach-banner__link:hover{gap:.7rem}
+.approach-banner__link i{width:16px;height:16px}
+.approach-banner__botanical{
+  position:absolute;right:-40px;top:50%;transform:translateY(-50%);
+  width:220px;height:300px;opacity:.08;pointer-events:none;
+}
+@media(max-width:1024px){
+  .approach-banner__inner{grid-template-columns:1fr;gap:2.5rem}
+}
+
+/* ========== APPROACH ========== */
+.approach{text-align:center}
+.approach__intro{max-width:640px;margin:0 auto 4rem}
+.approach__cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;
+}
+.approach-card{
+  border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow);background:var(--warm-white);
+  border:1px solid var(--border);
+  transition:transform .3s,box-shadow .3s;
+}
+.approach-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.approach-card__img{height:220px;overflow:hidden}
+.approach-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.approach-card:hover .approach-card__img img{transform:scale(1.03)}
+.approach-card__body{padding:2rem;text-align:left}
+.approach-card__title{
+  font-family:var(--ff-heading);font-size:1.35rem;font-weight:600;
+  color:var(--charcoal);margin-bottom:.75rem;
+}
+.approach-card__desc{
+  font-family:var(--ff-body-alt);font-size:.85rem;color:#888;line-height:1.75;
+}
+
+/* ========== GALLERY ========== */
+.gallery__header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:3.5rem;
+}
+.gallery__heading{
+  font-family:var(--ff-heading);font-size:clamp(1.75rem,3.5vw,2.5rem);
+  font-weight:500;color:var(--charcoal);margin-bottom:.5rem;
+  font-style:italic;
+}
+.gallery__sub{
+  font-family:var(--ff-body-alt);font-size:.9rem;color:#999;margin-bottom:1rem;
+}
+.gallery__arrow{
+  width:48px;height:48px;border-radius:50%;
+  background:var(--sage);display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:background .3s;flex-shrink:0;color:#fff;
+}
+.gallery__arrow:hover{background:#7A8A79}
+.gallery__arrow i{width:20px;height:20px}
+.gallery__grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;
+}
+.gallery__item{
+  border-radius:var(--radius);overflow:hidden;
+  height:260px;position:relative;
+}
+.gallery__item img{
+  width:100%;height:100%;object-fit:cover;transition:transform .5s;
+}
+.gallery__item:hover img{transform:scale(1.05)}
+.gallery__item::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.15),transparent 50%);
+  opacity:0;transition:opacity .3s;
+}
+.gallery__item:hover::after{opacity:1}
+
+/* ========== TESTIMONIAL ========== */
+.testimonial{position:relative;overflow:hidden;padding-top:3rem;padding-bottom:0}
+.testimonial__inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:4rem;
+  position:relative;z-index:1;
+}
+.testimonial__content{max-width:480px}
+.testimonial__quote-mark{
+  font-family:var(--ff-heading);font-size:4rem;line-height:1;
+  color:var(--sage);opacity:.6;margin-bottom:.5rem;
+  user-select:none;
+}
+.testimonial__text{
+  font-family:var(--ff-heading);font-size:clamp(1.15rem,2vw,1.4rem);
+  font-weight:400;font-style:italic;color:var(--charcoal);
+  line-height:1.7;margin-bottom:1.5rem;
+}
+.testimonial__author{
+  font-family:var(--ff-body-alt);font-size:.7rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--taupe);
+}
+.testimonial__image{
+  position:relative;overflow:hidden;
+}
+.testimonial__image img{
+  width:100%;height:400px;object-fit:cover;
+}
+.testimonial__dots{
+  display:flex;justify-content:center;gap:.5rem;
+  padding:2rem 0 2.5rem;
+}
+.testimonial__dot{
+  width:8px;height:8px;border-radius:50%;background:var(--stone);
+  cursor:pointer;transition:background .3s;
+}
+.testimonial__dot--active{background:var(--sage)}
+@media(max-width:1024px){
+  .testimonial__inner{grid-template-columns:1fr;gap:2.5rem}
+  .testimonial__image img{height:320px}
+}
+@media(max-width:768px){
+  .testimonial__image img{height:260px}
+}
+
+/* ========== CTA BANNER ========== */
+.cta-banner{
+  background:var(--sage);padding:5rem 0;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-banner::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10c20 15 30 35 30 55s-10 25-30 25-30-5-30-25 10-40 30-55z' fill='none' stroke='%23fff' stroke-width='.5' opacity='.06'/%3E%3C/svg%3E");
+  opacity:.5;
+}
+.cta-banner h2{
+  font-family:var(--ff-heading);font-size:clamp(1.5rem,3vw,2.25rem);
+  font-weight:500;color:#fff;margin-bottom:1rem;position:relative;
+  font-style:italic;
+}
+.cta-banner p{
+  font-family:var(--ff-body-alt);color:rgba(255,255,255,.8);
+  font-size:.95rem;max-width:560px;margin:0 auto 2.5rem;
+  line-height:1.75;position:relative;
+}
+.cta-banner .btn{position:relative}
+
+/* ========== FOOTER ========== */
+.footer{
+  background:var(--footer-dark);color:rgba(255,255,255,.8);
+  padding:5rem 0 0;position:relative;overflow:hidden;
+}
+.footer__inner{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;
+  gap:3.5rem;padding-bottom:3.5rem;
+}
+.footer__brand{}
+.footer__logo{
+  display:flex;align-items:center;gap:.65rem;margin-bottom:.35rem;
+}
+.footer__logo-icon{
+  color:#fff;flex-shrink:0;
+}
+.footer__brand-name{
+  font-family:var(--ff-heading);font-size:1.35rem;font-weight:600;
+  color:#fff;margin-bottom:0;
+}
+.footer__brand-tagline{
+  font-family:var(--ff-body-alt2);font-size:.78rem;
+  color:rgba(255,255,255,.4);margin-bottom:1.5rem;margin-top:.15rem;
+}
+.footer__socials{display:flex;gap:.75rem}
+.footer__social-btn{
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.25);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .3s;color:rgba(255,255,255,.7);
+}
+.footer__social-btn:hover{border-color:rgba(255,255,255,.6);color:#fff;background:rgba(255,255,255,.08)}
+.footer__social-btn i{width:16px;height:16px}
+.footer__col-title{
+  font-family:var(--ff-body-alt);font-size:.65rem;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);margin-bottom:1.5rem;
+}
+.footer__links li{margin-bottom:.7rem}
+.footer__links a{
+  font-family:var(--ff-body-alt);font-size:.85rem;
+  color:rgba(255,255,255,.6);transition:color .3s;
+}
+.footer__links a:hover{color:#fff}
+.footer__contact-item{
+  display:flex;align-items:flex-start;gap:.7rem;
+  margin-bottom:.85rem;font-family:var(--ff-body-alt);
+  font-size:.85rem;color:rgba(255,255,255,.6);
+}
+.footer__contact-item svg{
+  width:16px;height:16px;color:rgba(255,255,255,.35);
+  flex-shrink:0;margin-top:3px;
+}
+.footer__hours{
+  border:1px solid rgba(255,255,255,.15);border-radius:var(--radius);
+  padding:1.15rem 1.25rem;margin-top:1.5rem;
+  background:rgba(255,255,255,.03);
+}
+.footer__hours-title{
+  font-family:var(--ff-body-alt);font-size:.65rem;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);margin-bottom:.65rem;
+}
+.footer__hours-row{
+  display:flex;justify-content:space-between;
+  font-family:var(--ff-body-alt);font-size:.8rem;
+  color:rgba(255,255,255,.55);margin-bottom:.3rem;
+}
+.footer__hours-note{
+  font-family:var(--ff-body-alt2);font-size:.75rem;
+  color:rgba(255,255,255,.3);font-style:italic;margin-top:.5rem;
+}
+.footer__botanical{
+  position:absolute;right:-40px;top:50%;transform:translateY(-50%);
+  width:240px;opacity:.04;pointer-events:none;
+}
+.footer__bottom{
+  border-top:1px solid rgba(255,255,255,.08);padding:1.25rem 0;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.footer__copy{font-family:var(--ff-body-alt);font-size:.78rem;color:rgba(255,255,255,.3)}
+.footer__bottom-links{display:flex;gap:2rem}
+.footer__bottom-links a{
+  font-family:var(--ff-body-alt);font-size:.78rem;
+  color:rgba(255,255,255,.35);transition:color .3s;
+}
+.footer__bottom-links a:hover{color:#fff}
+
+/* ========== CREDENTIALS ========== */
+.credentials{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem}
+.credential-group{margin-bottom:1.5rem}
+.credential-group__title{
+  font-family:var(--ff-body-alt);font-size:.7rem;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--sage);margin-bottom:.75rem;
+}
+.credential-group ul{list-style:none}
+.credential-group li{
+  font-family:var(--ff-body-alt);font-size:.85rem;color:#666;
+  line-height:1.7;padding-left:1rem;position:relative;margin-bottom:.35rem;
+}
+.credential-group li::before{
+  content:'';position:absolute;left:0;top:.65rem;
+  width:5px;height:5px;border-radius:50%;background:var(--sage);opacity:.5;
+}
+.fees-box{
+  background:var(--warm-white);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.5rem 1.75rem;margin-top:2rem;
+}
+.fees-box__title{
+  font-family:var(--ff-heading-alt);font-size:1rem;font-weight:700;
+  color:var(--charcoal);margin-bottom:.75rem;
+}
+.fees-box__row{
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--ff-body-alt);font-size:.85rem;color:#666;
+  padding:.4rem 0;border-bottom:1px solid var(--border);
+}
+.fees-box__row:last-child{border-bottom:none}
+.fees-box__row span:last-child{font-weight:600;color:var(--charcoal)}
+.fees-box__note{
+  font-family:var(--ff-body-alt2);font-size:.8rem;color:#999;
+  font-style:italic;margin-top:.75rem;
+}
+
+/* ========== THERAPY FUNDAMENTALS ========== */
+.fundamentals{position:relative;text-align:center}
+.fundamentals__intro{
+  max-width:640px;margin:0 auto 3.5rem;
+}
+.fundamentals__heading{
+  font-family:var(--ff-heading);font-size:clamp(1.75rem,3.5vw,2.5rem);
+  font-weight:500;color:var(--charcoal);margin-bottom:1rem;line-height:1.3;
+}
+.fundamentals__heading em{font-style:italic;color:var(--sage)}
+.fundamentals__sub{
+  font-family:var(--ff-body);font-size:.9rem;color:#888;line-height:1.7;
+}
+.fundamentals__grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:2rem;
+  margin-bottom:2rem;
+}
+.fw-card{
+  background:var(--warm-white);border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;display:grid;grid-template-columns:180px 1fr;
+  box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;
+}
+.fw-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.fw-card__img{height:100%;min-height:200px;overflow:hidden}
+.fw-card__img img{width:100%;height:100%;object-fit:cover}
+.fw-card__body{padding:1.75rem;display:flex;flex-direction:column}
+.fw-card__icon{
+  width:28px;height:28px;margin-bottom:.75rem;color:#B8A998;
+}
+.fw-card__icon i{width:24px;height:24px;stroke-width:1.5}
+.fw-card__title{
+  font-family:var(--ff-heading);font-size:1.2rem;font-weight:600;
+  color:var(--charcoal);margin-bottom:.5rem;
+}
+.fw-card__desc{
+  font-family:var(--ff-body-alt);font-size:.82rem;color:#888;line-height:1.7;
+  flex:1;margin-bottom:.75rem;
+}
+/* Featured EMDR card */
+.fw-featured{
+  background:var(--light-sand);border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;display:grid;grid-template-columns:1fr 1.2fr;
+  box-shadow:var(--shadow);
+}
+.fw-featured__body{
+  padding:2.5rem;display:flex;flex-direction:column;justify-content:center;
+}
+.fw-featured__icon{
+  width:32px;height:32px;margin-bottom:1rem;color:#999;
+}
+.fw-featured__icon i{width:28px;height:28px;stroke-width:1.5}
+.fw-featured__title{
+  font-family:var(--ff-heading);font-size:1.35rem;font-weight:600;
+  color:var(--charcoal);margin-bottom:.75rem;
+}
+.fw-featured__desc{
+  font-family:var(--ff-body-alt);font-size:.88rem;color:#777;line-height:1.8;
+  margin-bottom:1.25rem;
+}
+.fw-featured__img{overflow:hidden}
+.fw-featured__img img{width:100%;height:100%;min-height:240px;object-fit:cover}
+@media(max-width:768px){
+  .fundamentals__grid{grid-template-columns:1fr}
+  .fw-card{grid-template-columns:1fr}
+  .fw-card__img{height:160px}
+  .fw-featured{grid-template-columns:1fr}
+  .fw-featured__img img{height:200px;min-height:auto}
+}
+
+/* ========== CONTACT SECTION ========== */
+.contact-section{position:relative}
+.contact__inner{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;
+}
+.contact__text .label{text-align:left}
+.contact__heading{
+  font-family:var(--ff-heading);font-size:clamp(1.75rem,3.5vw,2.5rem);
+  font-weight:500;color:var(--charcoal);margin-bottom:1.25rem;line-height:1.25;
+}
+.contact__desc{
+  font-family:var(--ff-body);font-size:.95rem;color:#666;line-height:1.85;margin-bottom:1.25rem;
+}
+.contact__detail{
+  display:flex;align-items:center;gap:.6rem;
+  font-family:var(--ff-body-alt);font-size:.85rem;color:#888;margin-bottom:.6rem;
+}
+.contact__detail i{width:18px;height:18px;color:var(--sage);stroke-width:1.5}
+.contact__form{
+  background:var(--warm-white);border:1px solid var(--border);border-radius:var(--radius);
+  padding:2.5rem;box-shadow:var(--shadow);
+}
+.contact__form h3{
+  font-family:var(--ff-heading-alt);font-size:1.1rem;font-weight:700;
+  color:var(--charcoal);margin-bottom:1.5rem;
+}
+.form-group{margin-bottom:1.25rem}
+.form-group label{
+  display:block;font-family:var(--ff-body-alt);font-size:.75rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:#999;margin-bottom:.4rem;
+}
+.form-group input,.form-group textarea{
+  width:100%;height:54px;padding:0 1rem;border:1px solid var(--border);border-radius:var(--radius);
+  font-family:var(--ff-body);font-size:.9rem;color:var(--charcoal);
+  background:var(--ivory);transition:border-color .3s;
+}
+.form-group textarea{height:120px;padding:1rem;resize:vertical}
+.form-group input:focus,.form-group textarea:focus{
+  outline:none;border-color:var(--sage);
+}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:1024px){
+  .hero__inner{grid-template-columns:1fr;min-height:auto;gap:3rem}
+  .hero__text{max-width:100%}
+  .hero__image-wrap img{height:400px}
+  .philosophy__inner{grid-template-columns:1fr;gap:3rem}
+  .services__grid{grid-template-columns:1fr 1fr}
+  .fundamentals__grid{grid-template-columns:1fr}
+  .contact__inner{grid-template-columns:1fr}
+  .approach__cards{grid-template-columns:1fr}
+  .approach-banner__inner{grid-template-columns:1fr;gap:2.5rem}
+  .gallery__grid{grid-template-columns:repeat(3,1fr)}
+  .footer__inner{grid-template-columns:1fr 1fr;gap:2.5rem}
+}
+@media(max-width:768px){
+  .header__nav-links,.header__nav .btn{display:none}
+  .header__hamburger{display:flex}
+  .hero__headline{font-size:2.25rem}
+  .hero__image-wrap img{height:300px}
+  .services__grid{grid-template-columns:1fr}
+  .service-card{grid-template-columns:1fr}
+  .service-card__img{height:180px}
+  .about__botanical{display:none}
+  .gallery__grid{grid-template-columns:1fr 1fr}
+  .gallery__header{flex-direction:column;align-items:flex-start;gap:1.5rem}
+  .footer__inner{grid-template-columns:1fr;gap:2.5rem}
+  .footer__bottom{flex-direction:column;gap:.75rem;text-align:center}
+}
+@media(max-width:480px){
+  .hero__headline{font-size:1.85rem}
+  .hero__ctas{flex-direction:column;align-items:flex-start}
+  .gallery__grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="header" id="header">
+  <div class="container">
+    <div class="header__inner">
+      <a href="#" class="header__logo">
+        <i data-lucide="leaf" class="header__logo-icon"></i>
+        <div class="header__logo-text">
+          <span class="header__logo-name">Tyler Therapy</span>
+          <span class="header__logo-tagline">Therapy for a more grounded life</span>
+        </div>
+      </a>
+      <nav class="header__nav">
+        <ul class="header__nav-links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#few-words">A Few Words</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn btn--sage">Schedule Consultation</a>
+      </nav>
+      <button class="header__hamburger" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav">
+  <a href="#" class="active">Home</a>
+  <a href="#about">About</a>
+  <a href="#approach">Approach</a>
+  <a href="#few-words">A Few Words</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn--sage" style="text-align:center;margin-top:1.5rem;justify-content:center;">Schedule Consultation</a>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <!-- Botanical decoration -->
+  <svg class="botanical-deco botanical-deco--hero" viewBox="0 0 300 300" fill="none">
+    <path d="M150 20c0 130 0 260 0 260" stroke="#8C9A8B" stroke-width="1.2"/>
+    <path d="M150 60c-30 15-65 45-80 75" stroke="#8C9A8B" stroke-width=".8"/>
+    <path d="M150 60c30 15 65 45 80 75" stroke="#8C9A8B" stroke-width=".8"/>
+    <path d="M150 100c-25 12-55 38-68 65" stroke="#8C9A8B" stroke-width=".7"/>
+    <path d="M150 100c25 12 55 38 68 65" stroke="#8C9A8B" stroke-width=".7"/>
+    <path d="M150 140c-20 10-42 30-55 55" stroke="#8C9A8B" stroke-width=".6"/>
+    <path d="M150 140c20 10 42 30 55 55" stroke="#8C9A8B" stroke-width=".6"/>
+    <path d="M150 180c-15 8-32 22-40 42" stroke="#8C9A8B" stroke-width=".5"/>
+    <path d="M150 180c15 8 32 22 40 42" stroke="#8C9A8B" stroke-width=".5"/>
+    <ellipse cx="95" cy="95" rx="30" ry="45" stroke="#8C9A8B" stroke-width=".5" transform="rotate(-30 95 95)"/>
+    <ellipse cx="205" cy="95" rx="30" ry="45" stroke="#8C9A8B" stroke-width=".5" transform="rotate(30 205 95)"/>
+    <ellipse cx="80" cy="145" rx="25" ry="38" stroke="#8C9A8B" stroke-width=".4" transform="rotate(-25 80 145)"/>
+    <ellipse cx="220" cy="145" rx="25" ry="38" stroke="#8C9A8B" stroke-width=".4" transform="rotate(25 220 145)"/>
+  </svg>
+  <div class="container">
+    <div class="hero__inner">
+      <div class="hero__text">
+        <h1 class="hero__headline">
+          A space to <em>reflect</em>,<br><em>heal</em>, and <em>grow</em>.
+        </h1>
+        <div class="hero__divider"></div>
+        <p class="hero__sub">
+          Compassionate, evidence-based psychotherapy and EMDR in a calm and supportive environment. You don&rsquo;t have to navigate this alone.
+        </p>
+        <div class="hero__ctas">
+          <a href="#contact" class="btn btn--sage">Schedule Consultation</a>
+          <a href="#approach" class="btn--link">Learn more about my approach <i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="hero__image-wrap">
+        <img src="images/banner.png?v=2" alt="Serene therapy space with armchair, books, framed art, and natural light">
+        <div class="hero__image-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== OUR PHILOSOPHY ========== -->
+<section class="section section--ivory philosophy">
+  <div class="container">
+    <div class="philosophy__inner">
+      <div class="philosophy__left">
+        <p class="label">Our Philosophy</p>
+        <h2 class="philosophy__heading">Helping you move toward <em>the life you want.</em></h2>
+        <div class="philosophy__divider"></div>
+      </div>
+      <div class="philosophy__grid">
+        <div class="philosophy__item">
+          <div class="philosophy__icon"><i data-lucide="leaf"></i></div>
+          <h3 class="philosophy__title">Presence over perfection.</h3>
+          <p class="philosophy__desc">Being here matters more than being perfect.</p>
+        </div>
+        <div class="philosophy__item">
+          <div class="philosophy__icon"><i data-lucide="leaf"></i></div>
+          <h3 class="philosophy__title">Curiosity over judgment.</h3>
+          <p class="philosophy__desc">We approach your story with openness and compassion.</p>
+        </div>
+        <div class="philosophy__item">
+          <div class="philosophy__icon"><i data-lucide="leaf"></i></div>
+          <h3 class="philosophy__title">Growth over fear.</h3>
+          <p class="philosophy__desc">Small steps create meaningful and lasting change.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== THERAPY SERVICES ========== -->
+<section class="section section--warm services" id="services">
+  <div class="container">
+    <div class="services__header">
+      <p class="label">How I Can Support You</p>
+      <h2 class="heading-lg">Therapy Services</h2>
+    </div>
+    <div class="services__grid">
+      <div class="service-card">
+        <div class="service-card__img"><img src="images/banner.png" alt="Therapy room with armchair"></div>
+        <div class="service-card__body">
+          <h3 class="service-card__title">Individual Therapy</h3>
+          <p class="service-card__desc">One-on-one support to help you navigate anxiety, stress, life transitions, and more.</p>
+          <a href="#about" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card__img"><img src="images/contact_img1.jpeg" alt="Comfortable therapy space"></div>
+        <div class="service-card__body">
+          <h3 class="service-card__title">Relationship Therapy</h3>
+          <p class="service-card__desc">Strengthen connection, improve communication, and build a healthier relationship.</p>
+          <a href="#about" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card__img"><img src="images/testimonial.png?v=2" alt="Serene still life with vase and greenery"></div>
+        <div class="service-card__body">
+          <h3 class="service-card__title">Anxiety Therapy</h3>
+          <p class="service-card__desc">Tools and support to help you manage worry, reduce overwhelm, and feel more at ease.</p>
+          <a href="#approach" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card__img"><img src="images/mind_bg.jpeg" alt="Natural light and greenery"></div>
+        <div class="service-card__body">
+          <h3 class="service-card__title">Teen Therapy</h3>
+          <p class="service-card__desc">Supporting teens through life&rsquo;s challenges with empathy, guidance, and practical tools.</p>
+          <a href="#about" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="services__cta">
+      <a href="#few-words" class="link-arrow" style="font-size:.9rem">Explore All Services <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MEET YOUR THERAPIST ========== -->
+<section class="section section--ivory" id="about">
+  <div class="container">
+    <div class="about__inner">
+      <div class="about__left">
+        <div class="about__image-wrap">
+          <img src="images/tyler_portrait.jpg" alt="Tyler Boudreau, LICSW, PhD">
+        </div>
+        <div class="about__text-block">
+          <p class="label">Meet Your Therapist</p>
+          <h2 class="about__heading">Human first.</h2>
+          <h2 class="about__heading about__heading--italic">Therapist second.</h2>
+          <div class="about__divider"></div>
+          <p class="about__bio">
+            I believe therapy is a collaborative process built on trust, authenticity, and respect. My goal is to create a safe, welcoming space where you can be fully yourself.
+          </p>
+        </div>
+        <div class="about__quote">
+          <div class="about__quote-mark">&ldquo;</div>
+          <p class="about__quote-text">You don&rsquo;t have to face this alone. I&rsquo;m here to walk alongside you.</p>
+          <p class="about__quote-author">&mdash; Tyler Boudreau, LICSW, PhD</p>
+        </div>
+      </div>
+      <div class="about__sidebar">
+        <div class="about__cred-list">
+          <div class="about__cred-item">
+            <div class="about__cred-icon"><i data-lucide="user-round"></i></div>
+            <div>
+              <p class="about__cred-title">Licensed Independent Clinical Social Worker</p>
+              <p class="about__cred-detail">Massachusetts &middot; LICSW1141086</p>
+            </div>
+          </div>
+          <div class="about__cred-item">
+            <div class="about__cred-icon"><i data-lucide="graduation-cap"></i></div>
+            <div>
+              <p class="about__cred-title">PhD Communication Studies</p>
+              <p class="about__cred-detail">UMass Amherst, 2017</p>
+            </div>
+          </div>
+          <div class="about__cred-item">
+            <div class="about__cred-icon"><i data-lucide="eye"></i></div>
+            <div>
+              <p class="about__cred-title">EMDR Certified Therapist</p>
+              <p class="about__cred-detail">Through EMDR International Association (EMDRIA)</p>
+            </div>
+          </div>
+          <div class="about__cred-item">
+            <div class="about__cred-icon"><i data-lucide="heart"></i></div>
+            <div>
+              <p class="about__cred-title">Specialized in Trauma, PTSD &amp; Dissociative Disorders</p>
+              <p class="about__cred-detail">Adults, Elders, Individuals &amp; Couples</p>
+            </div>
+          </div>
+        </div>
+        <a href="#approach" class="about__cta-btn">More About Me <i data-lucide="arrow-right"></i></a>
+      </div>
+      <svg class="about__botanical" viewBox="0 0 200 280" fill="none">
+        <path d="M100 10c0 120 0 260 0 260" stroke="#8C9A8B" stroke-width="1.5"/>
+        <path d="M100 40c-25 12-55 35-65 60" stroke="#8C9A8B" stroke-width="1"/>
+        <path d="M100 40c25 12 55 35 65 60" stroke="#8C9A8B" stroke-width="1"/>
+        <ellipse cx="55" cy="70" rx="28" ry="42" stroke="#8C9A8B" stroke-width=".8" transform="rotate(-20 55 70)"/>
+        <ellipse cx="145" cy="70" rx="28" ry="42" stroke="#8C9A8B" stroke-width=".8" transform="rotate(20 145 70)"/>
+        <path d="M100 90c-20 10-45 28-55 50" stroke="#8C9A8B" stroke-width=".8"/>
+        <path d="M100 90c20 10 45 28 55 50" stroke="#8C9A8B" stroke-width=".8"/>
+        <ellipse cx="62" cy="120" rx="22" ry="34" stroke="#8C9A8B" stroke-width=".6" transform="rotate(-18 62 120)"/>
+        <ellipse cx="138" cy="120" rx="22" ry="34" stroke="#8C9A8B" stroke-width=".6" transform="rotate(18 138 120)"/>
+        <path d="M100 140c-15 8-35 22-42 40" stroke="#8C9A8B" stroke-width=".6"/>
+        <path d="M100 140c15 8 35 22 42 40" stroke="#8C9A8B" stroke-width=".6"/>
+        <ellipse cx="72" cy="165" rx="16" ry="26" stroke="#8C9A8B" stroke-width=".5" transform="rotate(-15 72 165)"/>
+        <ellipse cx="128" cy="165" rx="16" ry="26" stroke="#8C9A8B" stroke-width=".5" transform="rotate(15 128 165)"/>
+        <path d="M100 185c-10 6-22 15-28 28" stroke="#8C9A8B" stroke-width=".5"/>
+        <path d="M100 185c10 6 22 15 28 28" stroke="#8C9A8B" stroke-width=".5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ========== INTEGRATED APPROACH ========== -->
+<section class="section section--warm approach" id="approach">
+  <div class="container">
+    <p class="label">An Integrated Approach</p>
+    <div class="approach__intro">
+      <h2 class="heading-lg">Mind, Body &amp; Spirit</h2>
+      <p class="text-body-alt">We can conceptualize this integration through the familiar categories: Mind, Body, and Spirit. Each dimension plays a vital role in the therapeutic process.</p>
+    </div>
+    <div class="approach__cards">
+      <div class="approach-card">
+        <div class="approach-card__img">
+          <img src="images/mind_bg.jpeg" alt="Lush green leaves — the mind">
+        </div>
+        <div class="approach-card__body">
+          <h3 class="approach-card__title">Working with the Mind</h3>
+          <p class="approach-card__desc">At the level of conscious awareness, we deal with thoughts, beliefs, memories, and values. Clients can re-think their situations, reorganize priorities, and reframe issues &mdash; connecting cognitions with the sub-conscious activity of the Autonomic Nervous System.</p>
+        </div>
+      </div>
+      <div class="approach-card">
+        <div class="approach-card__img">
+          <img src="images/body_bg.jpeg" alt="Flowing water — the body">
+        </div>
+        <div class="approach-card__body">
+          <h3 class="approach-card__title">Working with the Body</h3>
+          <p class="approach-card__desc">We address the activities of the subconscious mind and its effects on our nervous systems and physical experience. By recognizing patterned behaviors of the subconscious, we develop effective responses and work with the body&rsquo;s wisdom.</p>
+        </div>
+      </div>
+      <div class="approach-card">
+        <div class="approach-card__img">
+          <img src="images/spirit_bg.jpg" alt="Mountain landscape — the spirit">
+        </div>
+        <div class="approach-card__body">
+          <h3 class="approach-card__title">Working with the Spirit</h3>
+          <p class="approach-card__desc">We focus on the energetic experiences of life. Whether through religious beliefs, nature, or biological understandings, we share in the value of mindfulness practices, meditation, and breathing exercises to connect with the life energy around us.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== THERAPY FUNDAMENTALS ========== -->
+<section class="section section--ivory fundamentals" id="few-words">
+  <div class="container">
+    <div class="fundamentals__intro">
+      <p class="label">Therapy Fundamentals</p>
+      <h2 class="fundamentals__heading">Understanding Your <em>Therapy Path</em></h2>
+      <p class="fundamentals__sub">Therapy introduces concepts that help us understand how the mind works and how healing happens &mdash; one step at a time.</p>
+    </div>
+    <div class="fundamentals__grid">
+      <div class="fw-card">
+        <div class="fw-card__img"><img src="images/body_bg.jpeg" alt="Natural elements representing the nervous system"></div>
+        <div class="fw-card__body">
+          <div class="fw-card__icon"><i data-lucide="brain"></i></div>
+          <h3 class="fw-card__title">Nervous System</h3>
+          <p class="fw-card__desc">Understanding your body&rsquo;s natural responses to stress, safety, and connection.</p>
+          <a href="#" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+        </div>
+      </div>
+      <div class="fw-card">
+        <div class="fw-card__img"><img src="images/testimonial.png?v=2" alt="Stacked books and ceramic vessel"></div>
+        <div class="fw-card__body">
+          <div class="fw-card__icon"><i data-lucide="heart"></i></div>
+          <h3 class="fw-card__title">Attachment</h3>
+          <p class="fw-card__desc">How early relationships shape the way we connect, trust, and relate to others.</p>
+          <a href="#" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+        </div>
+      </div>
+      <div class="fw-card">
+        <div class="fw-card__img"><img src="images/spirit_bg.jpg" alt="Branch casting shadow on light surface"></div>
+        <div class="fw-card__body">
+          <div class="fw-card__icon"><i data-lucide="shield-alert"></i></div>
+          <h3 class="fw-card__title">Trauma</h3>
+          <p class="fw-card__desc">How unresolved experiences can stay with us &mdash; and how healing helps the brain feel safe again.</p>
+          <a href="#" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+        </div>
+      </div>
+      <div class="fw-card">
+        <div class="fw-card__img"><img src="images/mind_bg.jpeg" alt="Green leafy branch"></div>
+        <div class="fw-card__body">
+          <div class="fw-card__icon"><i data-lucide="layers"></i></div>
+          <h3 class="fw-card__title">Parts</h3>
+          <p class="fw-card__desc">Understanding the different parts of ourselves and creating inner balance.</p>
+          <a href="#" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="fw-featured">
+      <div class="fw-featured__body">
+        <div class="fw-featured__icon"><i data-lucide="sparkles"></i></div>
+        <h3 class="fw-featured__title">EMDR &amp; Adaptive Resolution</h3>
+        <p class="fw-featured__desc">Evidence-based approaches that help the mind process experiences and create lasting change at a deeper level.</p>
+        <a href="#" class="link-arrow">Learn more <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+      </div>
+      <div class="fw-featured__img">
+        <img src="images/forest_banner.png" alt="Serene natural scene with stones and greenery">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section section--sand contact-section" id="contact">
+  <div class="container">
+    <div class="contact__inner">
+      <div class="contact__text">
+        <p class="label">Get in Touch</p>
+        <h2 class="contact__heading">Schedule a Free<br>Consultation Call</h2>
+        <p class="contact__desc">
+          Send me a message if you&rsquo;d like to have a conversation about starting therapy or find out more about what therapy might look like for you.
+        </p>
+        <p class="contact__desc">
+          Unless other arrangements are agreed to, the consultation call will be conducted over video. I will schedule the session through the online therapy platform: SimplePractice.
+        </p>
+        <p class="contact__desc">
+          Consultation calls may be as brief as fifteen minutes but I will make myself available for an hour so that we have time for all questions. There is no fee for consultation calls.
+        </p>
+        <div style="margin-top:1.5rem">
+          <div class="contact__detail"><i data-lucide="map-pin"></i><span>Brookline, MA (In Person &amp; Online)</span></div>
+          <div class="contact__detail"><i data-lucide="calendar"></i><span>Monday &ndash; Friday, 8:00am &ndash; 3:00pm</span></div>
+          <div class="contact__detail"><i data-lucide="clock"></i><span>Special arrangements available outside regular hours</span></div>
+          <div class="contact__detail"><i data-lucide="lock"></i><span>Private pay clients &middot; Superbill available for OON claims</span></div>
+        </div>
+      </div>
+      <div class="contact__form">
+        <h3>Send a Message</h3>
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Telephone</label>
+          <input type="tel" id="phone" placeholder="(optional)">
+        </div>
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" placeholder="Tell me a bit about what you&rsquo;re looking for..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--sage" style="width:100%;justify-content:center;">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== APPROACH BANNER ========== -->
+<section class="approach-banner">
+  <svg class="approach-banner__botanical" viewBox="0 0 200 280" fill="none">
+    <path d="M100 10c0 120 0 260 0 260" stroke="#fff" stroke-width="1.5"/>
+    <path d="M100 40c-25 12-55 35-65 60" stroke="#fff" stroke-width="1"/>
+    <path d="M100 40c25 12 55 35 65 60" stroke="#fff" stroke-width="1"/>
+    <ellipse cx="55" cy="70" rx="28" ry="42" stroke="#fff" stroke-width=".8" transform="rotate(-20 55 70)"/>
+    <ellipse cx="145" cy="70" rx="28" ry="42" stroke="#fff" stroke-width=".8" transform="rotate(20 145 70)"/>
+    <ellipse cx="62" cy="120" rx="22" ry="34" stroke="#fff" stroke-width=".6" transform="rotate(-18 62 120)"/>
+    <ellipse cx="138" cy="120" rx="22" ry="34" stroke="#fff" stroke-width=".6" transform="rotate(18 138 120)"/>
+    <ellipse cx="72" cy="165" rx="16" ry="26" stroke="#fff" stroke-width=".5" transform="rotate(-15 72 165)"/>
+    <ellipse cx="128" cy="165" rx="16" ry="26" stroke="#fff" stroke-width=".5" transform="rotate(15 128 165)"/>
+  </svg>
+  <div class="container">
+    <div class="approach-banner__inner">
+      <h2 class="approach-banner__heading">Our approach is rooted in connection.</h2>
+      <div>
+        <p class="approach-banner__text">We combine evidence-based practices with genuine human connection to help you understand yourself more deeply and create lasting change.</p>
+        <a href="#approach" class="approach-banner__link">Learn Our Approach <i data-lucide="arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIAL ========== -->
+<section class="section section--ivory testimonial">
+  <div class="container">
+    <div class="testimonial__inner">
+      <div class="testimonial__content">
+        <div class="testimonial__quote-mark">&ldquo;</div>
+        <p class="testimonial__text">
+          Tyler creates a space that feels safe, grounded, and nonjudgmental. I always leave our sessions feeling lighter and more clear.
+        </p>
+        <p class="testimonial__author">&mdash; Client</p>
+      </div>
+      <div class="testimonial__image">
+        <img src="images/testimonial.png?v=2" alt="Serene still life with ceramic vase, greenery, and books">
+      </div>
+    </div>
+    <div class="testimonial__dots">
+      <span class="testimonial__dot testimonial__dot--active"></span>
+      <span class="testimonial__dot"></span>
+      <span class="testimonial__dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer" id="footer">
+  <svg class="footer__botanical" viewBox="0 0 220 300" fill="none">
+    <path d="M110 10v280" stroke="#fff" stroke-width="1"/>
+    <ellipse cx="60" cy="50" rx="35" ry="55" stroke="#fff" stroke-width=".6" transform="rotate(-20 60 50)"/>
+    <ellipse cx="160" cy="50" rx="35" ry="55" stroke="#fff" stroke-width=".6" transform="rotate(20 160 50)"/>
+    <ellipse cx="65" cy="130" rx="28" ry="42" stroke="#fff" stroke-width=".5" transform="rotate(-15 65 130)"/>
+    <ellipse cx="155" cy="130" rx="28" ry="42" stroke="#fff" stroke-width=".5" transform="rotate(15 155 130)"/>
+    <ellipse cx="72" cy="200" rx="20" ry="32" stroke="#fff" stroke-width=".4" transform="rotate(-12 72 200)"/>
+    <ellipse cx="148" cy="200" rx="20" ry="32" stroke="#fff" stroke-width=".4" transform="rotate(12 148 200)"/>
+    <path d="M110 60c-30 15-55 40-65 65" stroke="#fff" stroke-width=".5"/>
+    <path d="M110 60c30 15 55 40 65 65" stroke="#fff" stroke-width=".5"/>
+    <path d="M110 110c-22 12-42 32-50 52" stroke="#fff" stroke-width=".4"/>
+    <path d="M110 110c22 12 42 32 50 52" stroke="#fff" stroke-width=".4"/>
+  </svg>
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <svg class="footer__logo-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12c5.5 0 10-4.5 10-10z"/><path d="M12 2c5.5 0 10 4.5 10 10-5.5 0-10-4.5-10-10z"/><path d="M12 2v20"/></svg>
+          <p class="footer__brand-name">Tyler Therapy</p>
+        </div>
+        <p class="footer__brand-tagline">Therapy for a more grounded, meaningful life.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-btn" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+          <a href="#" class="footer__social-btn" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="mailto:hello@tylertherapy.com" class="footer__social-btn" aria-label="Mail"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#few-words">Resources</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Resources</p>
+        <ul class="footer__links">
+          <li><a href="#few-words">Articles</a></li>
+          <li><a href="#few-words">Books</a></li>
+          <li><a href="#few-words">Guides</a></li>
+          <li><a href="#">Client Portal</a></li>
+        </ul>
+      </div>
+      <div class="footer__right">
+        <p class="footer__col-title">Contact</p>
+        <div class="footer__contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>(617) 123-4567</span>
+        </div>
+        <div class="footer__contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>hello@tylertherapy.com</span>
+        </div>
+        <div class="footer__contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Brookline, MA</span>
+        </div>
+        <div class="footer__hours">
+          <p class="footer__hours-title">Office Hours</p>
+          <div class="footer__hours-row"><span>Monday &ndash; Friday</span><span>8:00am &ndash; 3:00pm</span></div>
+          <p class="footer__hours-note">By appointment only</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2026 Adaptive Resolutions LLC. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Initialize Lucide icons
+lucide.createIcons();
+
+// Header scroll effect
+window.addEventListener('scroll',()=>{
+  document.getElementById('header').classList.toggle('scrolled',window.scrollY>10);
+});
+
+// Close mobile nav on link click
+document.querySelectorAll('.mobile-nav a').forEach(a=>{
+  a.addEventListener('click',()=>document.querySelector('.mobile-nav').classList.remove('open'));
+});
+</script>
+</body>
+</html>

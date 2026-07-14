@@ -1,0 +1,17 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Screenshots / verification images (keep only actual site images)
+*.png
+!images/*.png
+
+# Large zip archives
+*.zip
