@@ -989,6 +989,17 @@ body{
   height:120px;
 }
 
+/* EMDR Certificate (standalone badge) */
+.emdr-certificate{
+  text-align:center;
+  padding:2rem 0;
+}
+.emdr-certificate img{
+  width:140px;
+  height:auto;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.15));
+}
+
 /* ========== THERAPY OPPORTUNITY ========== */
 .therapy-opportunity{text-align:center}
 .therapy-opportunity__intro{margin-bottom:2.5rem}
