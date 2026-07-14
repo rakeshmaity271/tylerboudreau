@@ -38,8 +38,14 @@ log_info "Starting deployment in: $(pwd)"
 
 # Check if this is a git repository
 if [ ! -d ".git" ]; then
-    log_warn "Not a git repository. Cloning fresh..."
-    git clone "$REPO_URL" .
+    log_warn "Not a git repository. Cloning fresh into temp directory..."
+    TMP_DIR=$(mktemp -d)
+    git clone "$REPO_URL" "$TMP_DIR"
+    # Move files from temp to web root, overwriting existing placeholder files
+    shopt -s dotglob
+    mv "$TMP_DIR"/* "$WEB_ROOT"/ 2>/dev/null || true
+    rm -rf "$TMP_DIR"
+    log_info "Repository cloned to web root."
 else
     # Reset any local changes and pull latest code
     log_info "Pulling latest code from $BRANCH branch..."
