@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Tyler Therapy | Schedule a Consultation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="header" id="header">
+  <div class="container">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <i data-lucide="leaf" class="header__logo-icon"></i>
+        <div class="header__logo-text">
+          <span class="header__logo-name">Tyler Therapy</span>
+          <span class="header__logo-tagline">Therapy for a more grounded life</span>
+        </div>
+      </a>
+      <nav class="header__nav">
+        <ul class="header__nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="approach.html">Approach</a></li>
+          <li><a href="few-words.html">A Few Words</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--sage">Schedule Consultation</a>
+      </nav>
+      <button class="header__hamburger" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="approach.html">Approach</a>
+  <a href="few-words.html">A Few Words</a>
+  <a href="contact.html" class="active">Contact</a>
+  <a href="contact.html" class="btn btn--sage" style="text-align:center;margin-top:1.5rem;justify-content:center;">Schedule Consultation</a>
+</nav>
+
+<!-- ========== CONTACT ========== -->
+<section class="section section--sand contact-section">
+  <div class="container">
+    <div class="contact__inner">
+      <div class="contact__text">
+        <p class="label">Get in Touch</p>
+        <h2 class="contact__heading">Schedule a Free<br>Consultation Call</h2>
+        <p class="contact__desc">
+          Send me a message if you&rsquo;d like to have a conversation about starting therapy or find out more about what therapy might look like for you.
+        </p>
+        <p class="contact__desc">
+          Unless other arrangements are agreed to, the consultation call will be conducted over video. I will schedule the session through the online therapy platform: SimplePractice.
+        </p>
+        <p class="contact__desc">
+          Consultation calls may be as brief as fifteen minutes but I will make myself available for an hour so that we have time for all questions. There is no fee for consultation calls.
+        </p>
+        <div class="contact__info-card">
+          <div class="contact__detail"><i data-lucide="map-pin"></i><span>Brookline, MA (In Person &amp; Online)</span></div>
+          <div class="contact__detail"><i data-lucide="calendar"></i><span>Monday &ndash; Friday, 8:00am &ndash; 3:00pm</span></div>
+          <div class="contact__detail"><i data-lucide="clock"></i><span>Special arrangements available outside regular hours</span></div>
+          <div class="contact__detail"><i data-lucide="lock"></i><span>Private pay clients &middot; Superbill available for OON claims</span></div>
+        </div>
+      </div>
+      <div class="contact__form">
+        <h3>Send a Message</h3>
+        <form action="#" method="post">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Telephone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(optional)">
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" placeholder="Tell me a bit about what you&rsquo;re looking for..." required></textarea>
+          </div>
+          <div class="form-consent">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">I hereby agree that my data entered in the contact form will be stored electronically, and will be processed and used for the purpose of establishing contact. I am aware that I can revoke my consent at any time.</label>
+          </div>
+          <button type="submit" class="btn btn--sage" style="width:100%;justify-content:center;">Send form</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer" id="footer">
+  <svg class="footer__botanical" viewBox="0 0 220 300" fill="none">
+    <path d="M110 10v280" stroke="#fff" stroke-width="1"/>
+    <ellipse cx="60" cy="50" rx="35" ry="55" stroke="#fff" stroke-width=".6" transform="rotate(-20 60 50)"/>
+    <ellipse cx="160" cy="50" rx="35" ry="55" stroke="#fff" stroke-width=".6" transform="rotate(20 160 50)"/>
+    <ellipse cx="65" cy="130" rx="28" ry="42" stroke="#fff" stroke-width=".5" transform="rotate(-15 65 130)"/>
+    <ellipse cx="155" cy="130" rx="28" ry="42" stroke="#fff" stroke-width=".5" transform="rotate(15 155 130)"/>
+    <ellipse cx="72" cy="200" rx="20" ry="32" stroke="#fff" stroke-width=".4" transform="rotate(-12 72 200)"/>
+    <ellipse cx="148" cy="200" rx="20" ry="32" stroke="#fff" stroke-width=".4" transform="rotate(12 148 200)"/>
+    <path d="M110 60c-30 15-55 40-65 65" stroke="#fff" stroke-width=".5"/>
+    <path d="M110 60c30 15 55 40 65 65" stroke="#fff" stroke-width=".5"/>
+    <path d="M110 110c-22 12-42 32-50 52" stroke="#fff" stroke-width=".4"/>
+    <path d="M110 110c22 12 42 32 50 52" stroke="#fff" stroke-width=".4"/>
+  </svg>
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <svg class="footer__logo-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12c5.5 0 10-4.5 10-10z"/><path d="M12 2c5.5 0 10 4.5 10 10-5.5 0-10-4.5-10-10z"/><path d="M12 2v20"/></svg>
+          <p class="footer__brand-name">Tyler Therapy</p>
+        </div>
+        <p class="footer__brand-tagline">Therapy for a more grounded, meaningful life.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-btn" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+          <a href="#" class="footer__social-btn" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="mailto:hello@tylertherapy.com" class="footer__social-btn" aria-label="Mail"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="approach.html">Approach</a></li>
+          <li><a href="few-words.html">Resources</a></li>
+          <li><a href="for-clients.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Resources</p>
+        <ul class="footer__links">
+          <li><a href="few-words.html">Articles</a></li>
+          <li><a href="few-words.html">Books</a></li>
+          <li><a href="few-words.html">Guides</a></li>
+          <li><a href="for-clients.html">Client Portal</a></li>
+        </ul>
+      </div>
+      <div class="footer__right">
+        <p class="footer__col-title">Contact</p>
+        <div class="footer__contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>(617) 123-4567</span>
+        </div>
+        <div class="footer__contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>hello@tylertherapy.com</span>
+        </div>
+        <div class="footer__contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Brookline, MA</span>
+        </div>
+        <div class="footer__hours">
+          <p class="footer__hours-title">Office Hours</p>
+          <div class="footer__hours-row"><span>Monday &ndash; Friday</span><span>8:00am &ndash; 3:00pm</span></div>
+          <p class="footer__hours-note">By appointment only</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2026 Adaptive Resolutions LLC. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+lucide.createIcons();
+window.addEventListener('scroll',()=>{
+  document.getElementById('header').classList.toggle('scrolled',window.scrollY>10);
+});
+document.querySelectorAll('.mobile-nav a').forEach(a=>{
+  a.addEventListener('click',()=>document.querySelector('.mobile-nav').classList.remove('open'));
+});
+</script>
+</body>
+</html>
