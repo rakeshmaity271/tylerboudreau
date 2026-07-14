@@ -936,6 +936,47 @@ body{
 .article-footnote a{color:var(--sage);text-decoration:underline}
 .article-footnote strong{color:var(--charcoal)}
 
+/* EMDR Credential Banner */
+.emdr-credential-banner{
+  margin-top:3rem;
+  background:#3B4A5C;
+  border-radius:var(--radius);
+  padding:2rem 2.5rem;
+  display:flex;
+  align-items:center;
+  gap:2rem;
+}
+.emdr-credential__badge{
+  flex-shrink:0;
+  width:90px;
+  height:90px;
+}
+.emdr-credential__badge svg{
+  width:100%;height:100%;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.3));
+}
+.emdr-credential__text p{
+  font-family:var(--ff-body-alt);
+  font-size:.85rem;
+  color:rgba(255,255,255,.85);
+  line-height:1.8;
+  margin:0;
+}
+.emdr-credential__text strong{
+  color:#fff;
+}
+.emdr-credential__text a{
+  color:#8CB4D4;
+  text-decoration:underline;
+}
+@media(max-width:768px){
+  .emdr-credential-banner{
+    flex-direction:column;
+    text-align:center;
+    padding:2rem 1.5rem;
+  }
+}
+
 /* Article CTA image */
 .article-cta-img{
   width:100%;max-width:600px;height:auto;
